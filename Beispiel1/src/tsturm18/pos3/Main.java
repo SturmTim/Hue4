@@ -5,6 +5,11 @@
  */
 package tsturm18.pos3;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author timst
@@ -15,7 +20,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scanner = new Scanner(System.in, "Windows-1252");
+        System.out.println("chunks>");
+        int chunks = Integer.parseInt(scanner.nextLine());
+        System.out.println("divider");
+        int divider = Integer.parseInt(scanner.nextLine());
+        NumberReader numberReader = new NumberReader();
+        numberReader.readNumbers(new File("numbers.csv"));
+        List<Integer> numbers = numberReader.getNumberList();
+        List<List<Integer>> splitetList = new ArrayList<>();
+        int numberPerChunk = (int) (numbers.size() / chunks);
+        for (int i = 0; i < chunks; i++) {
+            List<Integer> newList = new ArrayList<>();
+            for (int j = 0; j < numberPerChunk; j++) {
+
+            }
+        }
     }
 
 }

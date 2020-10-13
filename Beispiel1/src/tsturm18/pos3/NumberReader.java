@@ -18,11 +18,11 @@ import java.util.logging.Logger;
  *
  * @author timst
  */
-public class numberReader {
+public class NumberReader {
 
     List<Integer> numberList = new ArrayList<>();
 
-    public numberReader() {
+    public NumberReader() {
 
     }
 
@@ -38,7 +38,12 @@ public class numberReader {
                         }
                     }));
         } catch (IOException ex) {
-            Logger.getLogger(numberReader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NumberReader.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public List<Integer> getNumberList() {
+        return numberList;
+    }
+
 }
