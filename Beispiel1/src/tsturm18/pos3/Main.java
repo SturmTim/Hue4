@@ -27,9 +27,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             Scanner scanner = new Scanner(System.in, "Windows-1252");
-            System.out.println("chunks>");
+            System.out.print("chunks>");
             int chunks = Integer.parseInt(scanner.nextLine());
-            System.out.println("divider>");
+            System.out.print("divider>");
             int divider = Integer.parseInt(scanner.nextLine());
             NumberReader numberReader = new NumberReader();
             numberReader.readNumbers(new File("numbers.csv"));
