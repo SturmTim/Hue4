@@ -5,23 +5,30 @@
  */
 package tsturm18.pos3;
 
+import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.stream.Collectors;
 
 /**
  *
  * @author timst
  */
-public class CallNumber implements Callable<Integer> {
+public class CallNumber implements Callable<List<Integer>> {
 
-    int calledNumber;
+    private final List<Integer> numbers;
 
-    public CallNumber(int calledNumber) {
-        this.calledNumber = calledNumber;
+    private final Integer divider;
+
+    public CallNumber(List<Integer> numbers, Integer divider) {
+        this.numbers = numbers;
+        this.divider = divider;
     }
 
     @Override
-    public Integer call() throws Exception {
-        return calledNumber;
+    public List<Integer> call() throws Exception {
+        return numbers.stream()
+                .filter(number -> (number % divider) == 0)
+                .collect(Collectors.toList());
     }
 
 }

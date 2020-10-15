@@ -6,7 +6,6 @@
 package tsturm18.pos3;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,15 +26,8 @@ public class Main {
         int divider = Integer.parseInt(scanner.nextLine());
         NumberReader numberReader = new NumberReader();
         numberReader.readNumbers(new File("numbers.csv"));
-        List<Integer> numbers = numberReader.getNumberList();
-        List<List<Integer>> splitetList = new ArrayList<>();
-        int numberPerChunk = (int) (numbers.size() / chunks);
-        for (int i = 0; i < chunks; i++) {
-            List<Integer> newList = new ArrayList<>();
-            for (int j = 0; j < numberPerChunk; j++) {
+        List<Integer> numberList = numberReader.getNumberList();
 
-            }
-        }
     }
 
 }
