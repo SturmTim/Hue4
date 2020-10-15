@@ -7,13 +7,12 @@ package tsturm18.pos3;
 
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.stream.Collectors;
 
 /**
  *
  * @author timst
  */
-public class CallNumber implements Callable<List<Integer>> {
+public class CallNumber implements Callable<Integer[]> {
 
     private final List<Integer> numbers;
 
@@ -25,10 +24,10 @@ public class CallNumber implements Callable<List<Integer>> {
     }
 
     @Override
-    public List<Integer> call() throws Exception {
+    public Integer[] call() throws Exception {
         return numbers.stream()
-                .filter(number -> (number % divider) == 0)
-                .collect(Collectors.toList());
+                .filter(number -> number % divider == 0)
+                .toArray(Integer[]::new);
     }
 
 }
